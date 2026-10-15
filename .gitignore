@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# SQLite Database & Encryption Key at Rest (Privacy & Security)
+data/*.db
+data/*.db-wal
+data/*.db-shm
+data/*.key
+
+# Terraform local state & files
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+.terraform.lock.hcl
+
+# Environment & logs
+.env
+*.log
+npm-debug.log*
+
+# DevSecOps generated reports
+trivy-report.html
+
+# Operating System files
+.DS_Store
+Thumbs.db

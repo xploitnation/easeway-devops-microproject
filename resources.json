@@ -1,0 +1,18 @@
+[
+  { "id": "r1", "topic": "Stress", "title": "Box breathing for exam nerves", "minutes": 3,
+    "body": "Breathe in for four counts, hold for four, out for four, hold for four. Repeat four times. Slow, even breathing signals your body that it is safe to settle." },
+  { "id": "r2", "topic": "Stress", "title": "Break a big deadline into a 25-minute start", "minutes": 5,
+    "body": "Pick the smallest useful piece of the task and work on only that for 25 minutes. Write down what you finished, then decide whether to continue. Starting is usually the hardest part." },
+  { "id": "r3", "topic": "Sleep", "title": "A wind-down routine that works on a hostel schedule", "minutes": 6,
+    "body": "Keep wake-up time steady, dim screens 30 minutes before bed, and write tomorrow's top three tasks on paper so your mind can let go of them." },
+  { "id": "r4", "topic": "Sleep", "title": "If you cannot sleep after 20 minutes", "minutes": 3,
+    "body": "Get up, do something quiet in low light, and return to bed when sleepy. Lying awake teaches your brain to link bed with worry." },
+  { "id": "r5", "topic": "Exams", "title": "Study plans that leave room for rest", "minutes": 7,
+    "body": "Plan study blocks of 45-50 minutes with 10-minute breaks, include one full evening off each week, and schedule your hardest subject when you are most alert." },
+  { "id": "r6", "topic": "Exams", "title": "Calming a blank mind during a paper", "minutes": 3,
+    "body": "Put the pen down, take three slow breaths, then start with the question you are surest of. Momentum returns the thinking." },
+  { "id": "r7", "topic": "Connection", "title": "Reaching out when you feel alone", "minutes": 4,
+    "body": "Send one short message to someone you trust: 'Free for a chai this week?' Small, low-pressure contact rebuilds connection faster than waiting to feel ready." },
+  { "id": "r8", "topic": "Support", "title": "What happens in a first counselling session", "minutes": 4,
+    "body": "A counsellor listens, asks what brings you in, and agrees with you on what would help. You choose what to share. Sessions are confidential within the limits your campus service explains to you." }
+]
