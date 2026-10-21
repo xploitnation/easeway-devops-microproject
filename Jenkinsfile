@@ -8,7 +8,7 @@ pipeline {
 
     environment {
         IMAGE_NAME = 'easeway'
-        IMAGE_TAG  = 'latest'
+        IMAGE_TAG = 'latest'
     }
 
     stages {
@@ -33,13 +33,10 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh '''
-                    docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .
-                '''
+                sh 'docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .'
             }
         }
 
-        
         stage('Trivy Vulnerability Scan') {
             steps {
                 sh '''
@@ -51,3 +48,19 @@ pipeline {
                 '''
             }
         }
+    }
+
+    post {
+        always {
+            archiveArtifacts artifacts: 'trivy-report.txt', allowEmptyArchive: true
+        }
+
+        success {
+            echo 'Easeway CI and image scan completed successfully.'
+        }
+
+        failure {
+            echo 'Pipeline failed. Check the stage logs.'
+        }
+    }
+}
