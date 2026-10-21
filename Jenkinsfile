@@ -39,6 +39,7 @@ pipeline {
             }
         }
 
+        
         stage('Trivy Vulnerability Scan') {
             steps {
                 sh '''
@@ -46,24 +47,7 @@ pipeline {
                       -v /var/run/docker.sock:/var/run/docker.sock \
                       aquasec/trivy:latest image \
                       --format table \
-                      --output trivy-report.txt \
-                      ${IMAGE_NAME}:${IMAGE_TAG}
+                      ${IMAGE_NAME}:${IMAGE_TAG} > trivy-report.txt
                 '''
             }
         }
-    }
-
-    post {
-        always {
-            archiveArtifacts artifacts: 'trivy-report.txt', allowEmptyArchive: true
-        }
-
-        success {
-            echo 'Easeway CI and image scan completed successfully.'
-        }
-
-        failure {
-            echo 'Pipeline failed. Check the stage logs.'
-        }
-    }
-}
