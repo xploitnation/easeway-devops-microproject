@@ -31,18 +31,28 @@ pipeline {
             }
         }
 
-        stage('SonarQube Code Analysis') {
+        
+stage('SonarQube Code Analysis') {
     steps {
         withSonarQubeEnv('SonarQube') {
             sh '''
-                sonar-scanner \
+                docker run --rm \
+                  --network host \
+                  -e SONAR_HOST_URL="$SONAR_HOST_URL" \
+                  -e SONAR_TOKEN="$SONAR_AUTH_TOKEN" \
+                  -v "$WORKSPACE:/usr/src" \
+                  sonarsource/sonar-scanner-cli:latest \
                   -Dsonar.projectKey=easeway \
                   -Dsonar.projectName=Easeway \
-                  -Dsonar.sources=.
+                  -Dsonar.sources=. \
+                  -Dsonar.projectBaseDir=/usr/src \
+                  -Dsonar.scm.disabled=true \
+                  -Dsonar.exclusions=node_modules/**,coverage/**,.git/**,test/**,tests/**
             '''
         }
     }
 }
+
 
         stage('Build Docker Image') {
             steps {
