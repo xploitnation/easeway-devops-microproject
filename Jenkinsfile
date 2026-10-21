@@ -4,11 +4,12 @@ pipeline {
 
     tools {
         nodejs 'NodeJS-20'
+        sonarScanner 'SonarScanner'
     }
 
     environment {
         IMAGE_NAME = 'easeway'
-        IMAGE_TAG = 'latest'
+        IMAGE_TAG  = 'latest'
     }
 
     stages {
@@ -28,6 +29,14 @@ pipeline {
         stage('Automated Tests') {
             steps {
                 sh 'npm test'
+            }
+        }
+
+        stage('SonarQube Code Analysis') {
+            steps {
+                withSonarQubeEnv('SonarQube') {
+                    sh 'sonar-scanner'
+                }
             }
         }
 
@@ -52,11 +61,12 @@ pipeline {
 
     post {
         always {
-            archiveArtifacts artifacts: 'trivy-report.txt', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'trivy-report.txt',
+                             allowEmptyArchive: true
         }
 
         success {
-            echo 'Easeway CI and image scan completed successfully.'
+            echo 'Easeway CI/CD checks completed successfully.'
         }
 
         failure {
