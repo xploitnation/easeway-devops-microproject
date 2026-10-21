@@ -4,7 +4,6 @@ pipeline {
 
     tools {
         nodejs 'NodeJS-20'
-        sonarScanner 'SonarScanner'
     }
 
     environment {
@@ -33,12 +32,17 @@ pipeline {
         }
 
         stage('SonarQube Code Analysis') {
-            steps {
-                withSonarQubeEnv('SonarQube') {
-                    sh 'sonar-scanner'
-                }
-            }
+    steps {
+        withSonarQubeEnv('SonarQube') {
+            sh '''
+                sonar-scanner \
+                  -Dsonar.projectKey=easeway \
+                  -Dsonar.projectName=Easeway \
+                  -Dsonar.sources=.
+            '''
         }
+    }
+}
 
         stage('Build Docker Image') {
             steps {
