@@ -25,3 +25,16 @@ trivy-report.html
 # Operating System files
 .DS_Store
 Thumbs.db
+# Root-level SQLite files
+/*.db
+/*.db-wal
+/*.db-shm
+/*.db.key
+# Root-level SQLite files
+/*.db
+/*.db-wal
+/*.db-shm
+/*.db.key
+
+trivy-report.txt
+trivy-report.txt

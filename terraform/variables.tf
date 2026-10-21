@@ -29,7 +29,7 @@ variable "public_subnet_cidr" {
 }
 
 variable "ssh_source_cidr" {
-  description = "CIDR allowed to SSH into the instance (restrict to your IP in production)"
+  description = "Your public IP allowed to SSH into EC2"
   type        = string
-  default     = "0.0.0.0/0"
+  default     = "106.192.57.120/32"
 }
