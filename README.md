@@ -25,20 +25,6 @@ If `npm install` fails building `better-sqlite3`: `sudo apt install build-essent
 | Counsellor | `counsellor2` (Mr. Arjun Nair) | `Counsel@123` |
 | Student (synthetic) | `demo_student_01` ... `demo_student_12` | `Student@123` |
 
-Create your own student account on the sign-in screen for the video (use a made-up name, not your real one).
-
-## Suggested 3-minute video script
-
-1. **(0:00)** Intro: project title, SDG 9 / SDG 3, adapted Scrum (Privacy Impact Review + Ethical Definition of Done). Show your JIRA board and burndown for 15 seconds.
-2. **(0:25)** Create account: point out no email/real name, the consent notice and the checkbox (US-01, US-02).
-3. **(0:55)** Check in with score 4 and a note; then check in with score 2 to show the support card (US-03, US-08). Say it is rule-based, non-diagnostic, nobody is alerted.
-4. **(1:25)** *My trend* chart and table view (US-04). *Resources* with topic filter (US-05).
-5. **(1:50)** *Counsellor*: book a slot (US-06). Show it appears under your appointments.
-6. **(2:05)** Sign out, sign in as `counsellor1`: *Appointments* shows only your chosen name; *Campus trends* shows aggregated bars and hidden days under the 5-student threshold (US-07).
-7. **(2:30)** Sign in as your student again: *Privacy* > turn consent off (check-in now refused), turn on, then delete account (US-09).
-8. **(2:50)** Run `npm test` in the terminal to show 19/19 passing, then close with future scope.
-
-Accessibility (US-10): demonstrate pressing Tab through the check-in form and using the mood buttons with arrow keys, and resize the window to phone width.
 
 ## Mapping to the report's test cases
 
